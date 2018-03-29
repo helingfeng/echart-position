@@ -38,7 +38,8 @@ server {
     root /project/PrettyJob/public;
     index index.php index.html;
 
-    location ~ .*\.(css|js|gif|jpg|jpeg|png|bmp|zip|exe|txt|ico|rar|eot|woff|woff2|svg|ttf|swf|mp3|wmv|wma|mp4|mpg|flv)$ {
+    location ~ .*\.(css|js|gif|jpg|jpeg|png|bmp|zip|exe|txt|ico|rar
+    |eot|woff|woff2|svg|ttf|swf|mp3|wmv|wma|mp4|mpg|flv)$ {
         add_header Access-Control-Allow-Origin *;
         expires 30d;
     }
