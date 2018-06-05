@@ -2,24 +2,25 @@
 
 namespace App\Console\Commands;
 
-use Goutte\Client;
+
+use App\Crawler\LaGou;
 use Illuminate\Console\Command;
 
-class TestGoutte extends Command
+class CapturePosition extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:test-client';
+    protected $signature = 'command:capture-position';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = '抓取就业职位信息';
 
     /**
      * Create a new command instance.
@@ -38,12 +39,14 @@ class TestGoutte extends Command
      */
     public function handle()
     {
-        //
+        $output = $this->getOutput();
+        $output->writeln("正在爬取职位信息...");
 
-        $client = new \GuzzleHttp\Client();
+        $laGou = new LaGou();
+        $position = $laGou->getPosition();
 
-        $response = $client->request('GET','https://www.lagou.com/gongsi/2-0-0.json',['headers'=>['Referer'=>' https://www.lagou.comclear/gongsi/0-0-0']]);
+        echo $position;
 
-        $this->output->writeln($response->getBody()->getContents());
+
     }
 }
