@@ -7,7 +7,7 @@ use App\Crawler\Capture;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Helper\Table;
 
-class Position extends Command
+class PositionTable extends Command
 {
     /**
      * The name and signature of the console command.
@@ -21,7 +21,7 @@ class Position extends Command
      *
      * @var string
      */
-    protected $description = '抓取就业职位信息';
+    protected $description = '演示抓取就业职位信息，并在控制台输出第一页';
 
     /**
      * Create a new command instance.
