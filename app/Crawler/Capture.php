@@ -57,7 +57,7 @@ class Capture
 
             if ($res->getStatusCode() == 200) {
                 if ($contents['success']) {
-                    return $contents['content']['positionResult']['result'];
+                    return ['data' => $contents['content']['positionResult']['result'], 'total' => $contents['content']['positionResult']['totalCount']];
                 } else {
                     echo $contents['msg'] . PHP_EOL;
                     exit();

@@ -50,20 +50,21 @@ class PositionCsv extends Command
         $output->writeln("正在抓取关键字 {$kd} 相关职位数据...");
 
         $capture = new Capture();
-        $positions = $capture->getPositionListByPage();
-        $heading = array_keys(array_first($positions));
+        $positions = $capture->getPositionListByPage(1, $kd);
+        $heading = array_keys(array_first($positions['data']));
 
         $filename = "positions_{$kd}.csv";
         $fp = fopen(storage_path('app/public') . "/{$filename}", 'w+');
         fwrite($fp, chr(0xEF) . chr(0xBB) . chr(0xBF));
 
         fputcsv($fp, $heading);
-        $p = 1;
-        do {
-            // 休眠一段时间
-            sleep(3);
+        $total_page = ceil($positions['total'] / 15);
+        $output->writeln("关键字搜索共 {$total_page} 页，马上开始抓取...");
+        for ($p = 1; $p <= $total_page; $p++) {
+            sleep(1);
             $output->writeln("正在抓取第{$p}页.");
-            $positions = $capture->getPositionListByPage($p++, $kd);
+            $result = $capture->getPositionListByPage($p, $kd);
+            $positions = $result['data'];
             foreach ($positions as $position) {
                 foreach ($position as &$field) {
                     if (is_array($field)) {
@@ -74,7 +75,7 @@ class PositionCsv extends Command
                 }
                 fputcsv($fp, $position);
             }
-        } while (!empty($positions));
+        }
         fclose($fp);
         $output->writeln("任务已完成，程序自动退出.");
 
