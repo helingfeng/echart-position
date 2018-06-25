@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26133c9c364b11166b2c78b0ec39155d",
+    "content-hash": "149b3634d25821f588fe834ab319726a",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1256,6 +1256,60 @@
                 "random"
             ],
             "time": "2017-09-27T21:40:39+00:00"
+        },
+        {
+            "name": "php-ai/php-ml",
+            "version": "0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-ai/php-ml.git",
+                "reference": "83f3e8de7021d58297f5357cfeb293a347a2fa39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/php-ai/php-ml/83f3e8de7021d58297f5357cfeb293a347a2fa39.zip",
+                "reference": "83f3e8de7021d58297f5357cfeb293a347a2fa39",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan-phpunit": "^0.9.4",
+                "phpstan/phpstan-shim": "^0.9",
+                "phpstan/phpstan-strict-rules": "^0.9.0",
+                "phpunit/phpunit": "^7.0.0",
+                "symplify/coding-standard": "^3.1",
+                "symplify/easy-coding-standard": "^3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phpml\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arkadiusz Kondas",
+                    "email": "arkadiusz.kondas@gmail.com"
+                }
+            ],
+            "description": "PHP-ML - Machine Learning library for PHP",
+            "homepage": "https://github.com/php-ai/php-ml",
+            "keywords": [
+                "Neural network",
+                "artificial intelligence",
+                "computational learning theory",
+                "data science",
+                "feature extraction",
+                "machine learning",
+                "pattern recognition"
+            ],
+            "time": "2018-02-22T16:06:31+00:00"
         },
         {
             "name": "psr/container",
