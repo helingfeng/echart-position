@@ -20,6 +20,10 @@ php artisan command:csv-position --keyword PHP
 ![测试实例](demo1.png)
 
 
+### PHP 职位分布图
+
+![PHP职位分布](demo4.png)
+
 ## License
 
 The `PrettyJob` is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

@@ -61,7 +61,6 @@ class PositionCsv extends Command
         $total_page = ceil($positions['total'] / 15);
         $output->writeln("关键字搜索共 {$total_page} 页，马上开始抓取...");
         for ($p = 1; $p <= $total_page; $p++) {
-            sleep(1);
             $output->writeln("正在抓取第{$p}页.");
             $result = $capture->getPositionListByPage($p, $kd);
             $positions = $result['data'];
