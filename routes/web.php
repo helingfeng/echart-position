@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/map', function () {
-    return view('map');
+Route::get('/map-heat', function () {
+    return view('map-heat');
 });
 
 Route::get('/map-marker', function () {

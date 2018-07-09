@@ -28,7 +28,7 @@
 </html>
 @php
     $points = [];
-    $file = fopen(storage_path('app/public') ."/positions_php.csv","r");
+    $file = fopen(storage_path('app/public') ."/positions_".request()->input('keyword','PHP').".csv","r");
     while(! feof($file))
     {
         $item = fgetcsv($file);
@@ -54,7 +54,7 @@
     for (var i = 0; i < data.length; i++) {
         points.push(new BMap.Point(data[i]['lng'], data[i]['lat']));
     }
-    var pointCollection = new BMap.PointCollection(points,options);  // 初始化PointCollection
+    var pointCollection = new BMap.PointCollection(points, options);  // 初始化PointCollection
     map.addOverlay(pointCollection);  // 添加Overlay
 
 </script>

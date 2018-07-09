@@ -28,7 +28,7 @@
 </html>
 @php
     $points = [];
-    $file = fopen(storage_path('app/public') ."/positions_PHP.csv","r");
+    $file = fopen(storage_path('app/public') ."/positions_".request()->input('keyword','PHP').".csv","r");
     while(! feof($file))
     {
         $item = fgetcsv($file);
